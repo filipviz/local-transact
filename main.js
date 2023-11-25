@@ -36,13 +36,13 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
     ? [
         jsonRpcProvider({
           rpc: () => ({
-            http: import.meta.env.JSON_RPC_ENDPOINT,
+            http: import.meta.env.VITE_JSON_RPC_ENDPOINT,
           }),
         }),
       ]
     : [
         infuraProvider({
-          apiKey: import.meta.env.INFURA_API_KEY,
+          apiKey: import.meta.env.VITE_INFURA_API_KEY,
         }),
         publicProvider(),
       ]
